@@ -3,12 +3,12 @@ package com.bytebodsquad.server.model
 import jakarta.persistence.*
 
 @Entity
-@Table(name="excercise")
-class Test {
+@Table
+class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long ? =null
+    var id: Long ? = null
 
     @Column
-    var names: String = ""
+    var name: String = ""
 }
