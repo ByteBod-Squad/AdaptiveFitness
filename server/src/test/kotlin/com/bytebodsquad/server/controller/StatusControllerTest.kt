@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions.*
 class StatusControllerTest {
 
     @Test
-    fun statusCheck() {
+    fun shouldReturnServerStatus() {
+
     }
 }
