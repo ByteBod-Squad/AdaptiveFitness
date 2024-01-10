@@ -10,5 +10,5 @@ class Test {
     var id: Long ? =null
 
     @Column
-    var name: String = ""
+    var names: String = ""
 }
