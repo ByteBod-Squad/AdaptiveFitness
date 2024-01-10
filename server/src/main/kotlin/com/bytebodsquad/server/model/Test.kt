@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Table(name="excercise")
 class Test {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long ? =null
 
     @Column
