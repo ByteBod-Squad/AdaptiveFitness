@@ -15,5 +15,3 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-logging:
-  level:
