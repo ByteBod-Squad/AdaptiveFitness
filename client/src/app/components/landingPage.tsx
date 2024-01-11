@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Header from './Header';
 import Link from 'next/link';
 
-const Section = () => {
+const LandingPage = () => {
   return (
     <section className="flex flex-col h-[82%] bg-primary w-full p-8 text-secondary items-center justify-center">
       <div className="flex flex-col gap-12 text-center">
@@ -13,7 +13,7 @@ const Section = () => {
         </div>
         <div>
           <Link href={'/input'}>
-            <button className="bg-tertiary px-4 py-2 rounded-lg active:bg-tertiary/70">
+            <button className="bg-tertiary px-4 py-2 rounded-lg active:bg-tertiary/70 text-xl">
               Create workout
             </button>
           </Link>
@@ -23,4 +23,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default LandingPage;
