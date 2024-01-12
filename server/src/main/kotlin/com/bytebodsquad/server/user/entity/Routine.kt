@@ -11,7 +11,7 @@ import java.util.*
 class Routine {
     @Id
     @UuidGenerator
-    var id: UUID? = null
+    var id: UUID? = UUID.randomUUID()
 
     var duration: Int = 0
 

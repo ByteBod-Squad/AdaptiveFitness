@@ -8,7 +8,7 @@ import java.util.*
 class BodyPart {
     @Id
     @UuidGenerator
-    var id: UUID? = null
+    var id: UUID? = UUID.randomUUID()
 
     var name: String = ""
 }

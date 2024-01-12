@@ -11,7 +11,7 @@ import java.util.*
 class User {
     @Id
     @UuidGenerator
-    var id: UUID? = null
+    var id: UUID? = UUID.randomUUID()
 
     var name: String = ""
 
