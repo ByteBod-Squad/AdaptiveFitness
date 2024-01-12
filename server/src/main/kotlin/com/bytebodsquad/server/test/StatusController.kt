@@ -1,4 +1,4 @@
-package com.bytebodsquad.server.controller
+package com.bytebodsquad.server.test
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
