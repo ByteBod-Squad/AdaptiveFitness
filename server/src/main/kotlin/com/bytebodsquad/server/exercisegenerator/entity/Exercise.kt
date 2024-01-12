@@ -1,4 +1,4 @@
-package com.bytebodsquad.server.model
+package com.bytebodsquad.server.exercisegenerator.entity
 
 import jakarta.persistence.*
 
