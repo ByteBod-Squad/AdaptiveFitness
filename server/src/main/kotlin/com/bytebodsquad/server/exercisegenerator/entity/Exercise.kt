@@ -5,7 +5,6 @@ import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
 @Entity
-@Table
 class Exercise {
     @Id
     @UuidGenerator
@@ -14,15 +13,15 @@ class Exercise {
     var name: String = ""
 
     @ManyToOne
-    var bodyPart: BodyPart ?= null
+    var mainMuscle: BodyPart ?= null
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "exercise")
     var equipment: List<Equipment> ?= null
 
     @ManyToOne
     var target: BodyPart ?= null
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "exercise")
     var secondaryMuscles: List<BodyPart> ?= null
 
     @Column(length = 1000)

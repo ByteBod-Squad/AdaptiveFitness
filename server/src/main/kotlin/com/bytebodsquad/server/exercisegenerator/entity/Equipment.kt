@@ -7,12 +7,10 @@ import java.util.UUID
 
 
 @Entity
-@Table
 class Equipment {
     @Id
     @UuidGenerator
     var id: UUID ? = null
 
-    @Column
     var name: String = ""
 }

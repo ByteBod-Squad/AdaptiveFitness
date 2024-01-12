@@ -1,20 +1,16 @@
 package com.bytebodsquad.server.user.entity
 
-import com.bytebodsquad.server.exercisegenerator.entity.Exercise
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
 import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
 @Entity
-class Routine {
+class HealthCondition {
     @Id
     @UuidGenerator
     var id: UUID? = null
 
-    var duration: Int = 0
-
-    @ManyToMany(mappedBy = "routine")
-    var exercises: List<Exercise> ?= null
+    var name: String = ""
 }
