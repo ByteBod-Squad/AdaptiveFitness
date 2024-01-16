@@ -13,15 +13,35 @@ class Exercise {
     var name: String = ""
 
     @ManyToOne
+    @JoinTable(
+        name = "body-part_exercise",
+        joinColumns = [JoinColumn(name = "body-part_id")],
+        inverseJoinColumns = [JoinColumn(name = "exercise_id")]
+    )
     var mainMuscle: BodyPart ?= null
 
-    @ManyToMany(mappedBy = "exercise")
+    @ManyToMany
+    @JoinTable(
+        name = "equipment_exercise",
+        joinColumns = [JoinColumn(name = "equipment_id")],
+        inverseJoinColumns = [JoinColumn(name = "exercise_id")]
+    )
     var equipment: List<Equipment> ?= null
 
     @ManyToOne
-    var target: BodyPart ?= null
+    @JoinTable(
+        name = "body-area_exercise",
+        joinColumns = [JoinColumn(name = "body-area_id")],
+        inverseJoinColumns = [JoinColumn(name = "exercise_id")]
+    )
+    var targetArea: BodyArea ?= null
 
-    @ManyToMany(mappedBy = "exercise")
+    @ManyToMany
+    @JoinTable(
+        name = "body-part_exercise",
+        joinColumns = [JoinColumn(name = "body-part_id")],
+        inverseJoinColumns = [JoinColumn(name = "exercise_id")]
+    )
     var secondaryMuscles: List<BodyPart> ?= null
 
     @Column(length = 1000)
