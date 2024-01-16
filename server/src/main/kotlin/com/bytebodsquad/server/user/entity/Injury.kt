@@ -10,9 +10,9 @@ import java.util.*
 class Injury {
     @Id
     @UuidGenerator
-    var id: UUID? = UUID.randomUUID()
+    var id: String ?= ""
 
     var name: String = ""
 
-    var duration: Int = 0
+    var duration: String = ""
 }

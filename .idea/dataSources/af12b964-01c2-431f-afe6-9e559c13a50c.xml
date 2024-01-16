@@ -1153,7 +1153,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="289" parent="1" name="adaptive-fitness">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-01-16.14:03:53</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-01-16.15:04:23</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="290" parent="1" name="information_schema">
@@ -1269,13 +1269,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="321" parent="305" name="exercise_id">
-      <DasType>binary(16)|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="322" parent="305" name="body-area_id">
+    <column id="321" parent="305" name="body-area_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="322" parent="305" name="exercise_id">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="323" parent="305" name="PRIMARY">
@@ -1288,13 +1288,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="325" parent="306" name="exercise_id">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>1</Position>
-    </column>
-    <column id="326" parent="306" name="body-part_id">
+    <column id="325" parent="306" name="body-part_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="326" parent="306" name="exercise_id">
+      <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
     <index id="327" parent="306" name="PRIMARY">
@@ -1308,7 +1308,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="329" parent="307" name="id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
@@ -1346,7 +1346,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="337" parent="309" name="id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
@@ -1370,7 +1370,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
     </column>
     <column id="342" parent="310" name="exercise_id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1379,12 +1379,12 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="344" parent="311" name="name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="344" parent="311" name="instruction">
+      <DasType>varchar(1000)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="345" parent="311" name="instruction">
-      <DasType>varchar(1000)|0s</DasType>
+    <column id="345" parent="311" name="name">
+      <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <index id="346" parent="311" name="PRIMARY">
@@ -1398,7 +1398,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="348" parent="312" name="id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
@@ -1416,13 +1416,12 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="352" parent="313" name="id">
-      <DasType>binary(16)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="352" parent="313" name="duration">
+      <DasType>varchar(255)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="353" parent="313" name="duration">
-      <DasType>int|0s</DasType>
+    <column id="353" parent="313" name="id">
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1459,13 +1458,13 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="361" parent="315" name="id">
-      <DasType>binary(16)|0s</DasType>
+    <column id="361" parent="315" name="duration">
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="362" parent="315" name="duration">
-      <DasType>int|0s</DasType>
+    <column id="362" parent="315" name="id">
+      <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1479,46 +1478,46 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="365" parent="316" name="routine_id">
+    <column id="365" parent="316" name="exercise_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="366" parent="316" name="exercise_id">
+    <column id="366" parent="316" name="routine_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="367" parent="317" name="id">
-      <DasType>binary(16)|0s</DasType>
+    <column id="367" parent="317" name="age">
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="368" parent="317" name="age">
+    <column id="368" parent="317" name="height">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="369" parent="317" name="fitness_level">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="369" parent="317" name="weight">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="370" parent="317" name="gender">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="370" parent="317" name="id">
+      <DasType>binary(16)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="371" parent="317" name="height">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="371" parent="317" name="fitness_level">
+      <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="372" parent="317" name="name">
+    <column id="372" parent="317" name="gender">
       <DasType>varchar(255)|0s</DasType>
       <Position>6</Position>
     </column>
-    <column id="373" parent="317" name="weight">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="373" parent="317" name="name">
+      <DasType>varchar(255)|0s</DasType>
       <Position>7</Position>
     </column>
     <index id="374" parent="317" name="PRIMARY">
@@ -1537,7 +1536,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
     </column>
     <column id="377" parent="318" name="health-condition_id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
@@ -1547,16 +1546,16 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Position>1</Position>
     </column>
     <column id="379" parent="319" name="injury_id">
-      <DasType>binary(16)|0s</DasType>
+      <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="380" parent="320" name="user_id">
+    <column id="380" parent="320" name="routine_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="381" parent="320" name="routine_id">
+    <column id="381" parent="320" name="user_id">
       <DasType>binary(16)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>

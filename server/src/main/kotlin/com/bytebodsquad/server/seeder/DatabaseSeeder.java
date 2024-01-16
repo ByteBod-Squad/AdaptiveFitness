@@ -7,7 +7,9 @@ import com.bytebodsquad.server.exercisegenerator.repository.BodyAreaRepository;
 import com.bytebodsquad.server.exercisegenerator.repository.EquipmentRepository;
 import com.bytebodsquad.server.exercisegenerator.repository.MuscleRepository;
 import com.bytebodsquad.server.user.entity.HealthCondition;
+import com.bytebodsquad.server.user.entity.Injury;
 import com.bytebodsquad.server.user.repository.HealthConditionRepository;
+import com.bytebodsquad.server.user.repository.InjuryRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -24,13 +26,15 @@ public class DatabaseSeeder implements ApplicationRunner {
     private final BodyAreaRepository bodyAreaRepository;
     private final EquipmentRepository equipmentRepository;
     private final HealthConditionRepository healthConditionRepository;
+    private final InjuryRepository injuryRepository;
 
 
-    public DatabaseSeeder(MuscleRepository muscleRepository, BodyAreaRepository bodyAreaRepository, EquipmentRepository equipmentRepository, HealthConditionRepository healthConditionRepository) {
+    public DatabaseSeeder(MuscleRepository muscleRepository, BodyAreaRepository bodyAreaRepository, EquipmentRepository equipmentRepository, HealthConditionRepository healthConditionRepository, InjuryRepository injuryRepository) {
         this.muscleRepository = muscleRepository;
         this.bodyAreaRepository = bodyAreaRepository;
         this.equipmentRepository = equipmentRepository;
         this.healthConditionRepository = healthConditionRepository;
+        this.injuryRepository = injuryRepository;
     }
 
     @Override
@@ -39,6 +43,7 @@ public class DatabaseSeeder implements ApplicationRunner {
         seedBodyAreaDB();
         seedEquipmentDB();
         seedHealthConditionDB();
+        seedInjuryDB();
     }
 
     public void seedMuscleDB() {
@@ -152,6 +157,37 @@ public class DatabaseSeeder implements ApplicationRunner {
                 healthCondition.setName(data[1]);
 
                 healthConditionRepository.save(healthCondition);
+
+                index++;
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void seedInjuryDB() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(
+                    ResourceUtils.getFile("src/main/resources/data/AdaptiveFitness-Injury.csv")));
+
+            String line;
+            int index = 1;
+            boolean isFirstLine = true;
+
+            while ((line = reader.readLine()) != null) {
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+
+                String[] data = line.split(",");
+                Injury injury = new Injury();
+                injury.setId(data[0]);
+                injury.setName(data[1]);
+                injury.setDuration(data[2]);
+
+                injuryRepository.save(injury);
 
                 index++;
             }
