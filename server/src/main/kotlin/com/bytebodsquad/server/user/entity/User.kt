@@ -1,9 +1,6 @@
 package com.bytebodsquad.server.user.entity
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
+import jakarta.persistence.*
 import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
@@ -25,12 +22,27 @@ class User {
 
     var fitnessLevel: String =""
 
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany
+    @JoinTable(
+        name = "user_health-condition",
+        joinColumns = [JoinColumn(name = "user_id")],
+        inverseJoinColumns = [JoinColumn(name = "health-condition_id")]
+    )
     var healthCondition: List<HealthCondition> ?= null
 
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany
+    @JoinTable(
+        name = "user_injury",
+        joinColumns = [JoinColumn(name = "user_id")],
+        inverseJoinColumns = [JoinColumn(name = "injury_id")]
+    )
     var injury: List<Injury> ?= null
 
-    @ManyToMany(mappedBy = "user")
+    @ManyToMany
+    @JoinTable(
+        name = "user_routine",
+        joinColumns = [JoinColumn(name = "user_id")],
+        inverseJoinColumns = [JoinColumn(name = "routine_id")]
+    )
     var routine: List<Routine> ?= null
 }
