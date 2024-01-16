@@ -1,0 +1,19 @@
+id,name,duration
+6c278df4-cd45-4e6f-95b8-e2c2dadeec13,shoulders,0-3 months
+8696f4f0-3104-46a2-91fb-30d8527d1e38,shoulders,3-6 months
+c57dade2-0902-421c-a4e2-543b0be2918b,shoulders,6+ months
+7f5ff806-8ab8-4193-9831-9262490b7b3e,lower back,0-3 months
+059447ec-ca54-406a-8e37-f955c6649cba,lower back,3-6 months
+1ee6e752-8a0d-405c-9696-5296fa4f3b23,lower back,6+ months
+7b237e1e-05cf-4517-ac8f-7981bd88370f,neck,0-3 months
+ea5c3f61-a38e-45d5-8c9a-ce9da96a1e20,neck,3-6 months
+1ff60636-7362-4a0b-81ae-c0b24b3df31b,neck,6+ months
+dcfbca73-8f98-403d-b1ac-c3188fff318d,knee,0-3 months
+c7c3c092-8544-40d6-8f72-44dca188f38f,knee,3-6 months
+fdfffbbd-d3b7-4f72-85db-e82ffcbfa1ba,knee,6+ months
+e69793a1-49a5-4f70-bbb3-8edc9b03e85b,hip,0-3 months
+540a67b9-f229-4dd8-b5cd-bd34b9088a87,hip,3-6 months
+f420b0e8-d89b-4634-a2d3-9cd9f04a00dd,hip,6+ months
+f83c271c-91c2-4ee0-9cf4-02ff0760391f,ankle,0-3 months
+6dae3ba6-1489-448f-861b-0181adb367e4,ankle,3-6 months
+763b4850-8758-431e-b773-2220957621cf,ankle,6+ months
