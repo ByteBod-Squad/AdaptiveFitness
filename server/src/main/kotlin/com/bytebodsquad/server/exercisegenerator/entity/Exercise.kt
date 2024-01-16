@@ -14,8 +14,8 @@ class Exercise {
 
     @ManyToOne
     @JoinTable(
-        name = "body-part_exercise",
-        joinColumns = [JoinColumn(name = "body-part_id")],
+        name = "main_muscle_exercise",
+        joinColumns = [JoinColumn(name = "muscle_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
     var mainMuscle: Muscle ?= null
@@ -30,16 +30,16 @@ class Exercise {
 
     @ManyToOne
     @JoinTable(
-        name = "body-area_exercise",
-        joinColumns = [JoinColumn(name = "body-area_id")],
+        name = "body_area_exercise",
+        joinColumns = [JoinColumn(name = "body_area_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
     var targetArea: BodyArea ?= null
 
     @ManyToMany
     @JoinTable(
-        name = "body-part_exercise",
-        joinColumns = [JoinColumn(name = "body-part_id")],
+        name = "secondary_muscle_exercise",
+        joinColumns = [JoinColumn(name = "muscle_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
     var secondaryMuscles: List<Muscle> ?= null

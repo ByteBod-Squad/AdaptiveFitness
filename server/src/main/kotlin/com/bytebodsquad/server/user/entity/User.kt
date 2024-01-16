@@ -24,9 +24,9 @@ class User {
 
     @ManyToMany
     @JoinTable(
-        name = "user_health-condition",
+        name = "user_health_condition",
         joinColumns = [JoinColumn(name = "user_id")],
-        inverseJoinColumns = [JoinColumn(name = "health-condition_id")]
+        inverseJoinColumns = [JoinColumn(name = "health_condition_id")]
     )
     var healthCondition: List<HealthCondition> ?= null
 
