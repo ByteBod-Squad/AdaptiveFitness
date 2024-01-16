@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface EquipmentRepository : JpaRepository<Equipment, UUID> {
+interface EquipmentRepository : JpaRepository<Equipment, String> {
 }
