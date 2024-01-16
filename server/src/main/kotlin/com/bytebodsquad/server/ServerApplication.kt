@@ -1,5 +1,6 @@
 package com.bytebodsquad.server
 
+import com.bytebodsquad.server.seeder.DatabaseSeeder
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

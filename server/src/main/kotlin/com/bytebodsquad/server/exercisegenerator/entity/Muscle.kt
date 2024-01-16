@@ -8,7 +8,7 @@ import java.util.*
 class Muscle {
     @Id
     @UuidGenerator
-    var id: UUID? = UUID.randomUUID()
+    var id: String?=""
 
     var name: String = ""
 }
