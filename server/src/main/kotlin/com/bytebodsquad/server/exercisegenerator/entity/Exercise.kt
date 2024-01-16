@@ -18,7 +18,7 @@ class Exercise {
         joinColumns = [JoinColumn(name = "body-part_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
-    var mainMuscle: BodyPart ?= null
+    var mainMuscle: Muscle ?= null
 
     @ManyToMany
     @JoinTable(
@@ -42,7 +42,7 @@ class Exercise {
         joinColumns = [JoinColumn(name = "body-part_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
-    var secondaryMuscles: List<BodyPart> ?= null
+    var secondaryMuscles: List<Muscle> ?= null
 
     @Column(length = 1000)
     var instruction: String = ""

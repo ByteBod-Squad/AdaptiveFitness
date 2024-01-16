@@ -5,7 +5,7 @@ import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
 @Entity
-class BodyPart {
+class Muscle {
     @Id
     @UuidGenerator
     var id: UUID? = UUID.randomUUID()

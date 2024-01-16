@@ -1,10 +1,10 @@
 package com.bytebodsquad.server.exercisegenerator.repository
 
-import com.bytebodsquad.server.exercisegenerator.entity.BodyPart
+import com.bytebodsquad.server.exercisegenerator.entity.Muscle
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface BodyPartRepository : JpaRepository<BodyPart, UUID> {
+interface BodyPartRepository : JpaRepository<Muscle, UUID> {
 }

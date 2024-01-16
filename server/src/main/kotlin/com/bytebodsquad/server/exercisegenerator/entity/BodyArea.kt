@@ -1,7 +1,6 @@
 package com.bytebodsquad.server.exercisegenerator.entity
 
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
+import jakarta.persistence.*
 import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
