@@ -10,7 +10,7 @@ import java.util.*
 class HealthCondition {
     @Id
     @UuidGenerator
-    var id: UUID? = UUID.randomUUID()
+    var id: String? = ""
 
     var name: String = ""
 }

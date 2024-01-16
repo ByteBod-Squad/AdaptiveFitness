@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface HealthConditionRepository : JpaRepository<HealthCondition, UUID> {
+interface HealthConditionRepository : JpaRepository<HealthCondition, String> {
 }
