@@ -1,9 +1,7 @@
 package com.bytebodsquad.server.user.entity
 
 import com.bytebodsquad.server.exercisegenerator.entity.Exercise
-import jakarta.persistence.Entity
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
+import jakarta.persistence.*
 import org.hibernate.annotations.UuidGenerator
 import java.util.*
 
@@ -15,6 +13,11 @@ class Routine {
 
     var duration: Int = 0
 
-    @ManyToMany(mappedBy = "routine")
+    @ManyToMany
+    @JoinTable(
+        name = "routine_exercise",
+        joinColumns = [JoinColumn(name = "routine_id")],
+        inverseJoinColumns = [JoinColumn(name = "exercise_id")]
+    )
     var exercises: List<Exercise> ?= null
 }
