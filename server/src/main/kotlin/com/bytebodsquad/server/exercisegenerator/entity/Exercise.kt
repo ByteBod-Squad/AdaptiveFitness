@@ -8,9 +8,11 @@ import java.util.*
 class Exercise {
     @Id
     @UuidGenerator
-    var id: UUID? = UUID.randomUUID()
+    var id: String ?= ""
 
     var name: String = ""
+
+    var difficulty: String = ""
 
     @ManyToOne
     @JoinTable(
@@ -20,13 +22,13 @@ class Exercise {
     )
     var mainMuscle: Muscle ?= null
 
-    @ManyToMany
+    @ManyToOne
     @JoinTable(
         name = "equipment_exercise",
         joinColumns = [JoinColumn(name = "equipment_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
-    var equipment: List<Equipment> ?= null
+    var equipment: Equipment ?= null
 
     @ManyToOne
     @JoinTable(
@@ -36,13 +38,13 @@ class Exercise {
     )
     var targetArea: BodyArea ?= null
 
-    @ManyToMany
+    @ManyToOne
     @JoinTable(
         name = "secondary_muscle_exercise",
         joinColumns = [JoinColumn(name = "muscle_id")],
         inverseJoinColumns = [JoinColumn(name = "exercise_id")]
     )
-    var secondaryMuscles: List<Muscle> ?= null
+    var secondaryMuscle: Muscle ?= null
 
     @Column(length = 1000)
     var instruction: String = ""

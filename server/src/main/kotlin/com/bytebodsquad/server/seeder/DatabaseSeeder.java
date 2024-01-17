@@ -2,9 +2,11 @@ package com.bytebodsquad.server.seeder;
 
 import com.bytebodsquad.server.exercisegenerator.entity.BodyArea;
 import com.bytebodsquad.server.exercisegenerator.entity.Equipment;
+import com.bytebodsquad.server.exercisegenerator.entity.Exercise;
 import com.bytebodsquad.server.exercisegenerator.entity.Muscle;
 import com.bytebodsquad.server.exercisegenerator.repository.BodyAreaRepository;
 import com.bytebodsquad.server.exercisegenerator.repository.EquipmentRepository;
+import com.bytebodsquad.server.exercisegenerator.repository.ExerciseRepository;
 import com.bytebodsquad.server.exercisegenerator.repository.MuscleRepository;
 import com.bytebodsquad.server.user.entity.HealthCondition;
 import com.bytebodsquad.server.user.entity.Injury;
@@ -28,13 +30,15 @@ public class DatabaseSeeder implements ApplicationRunner {
     private final HealthConditionRepository healthConditionRepository;
     private final InjuryRepository injuryRepository;
 
+    private final ExerciseRepository exerciseRepository;
 
-    public DatabaseSeeder(MuscleRepository muscleRepository, BodyAreaRepository bodyAreaRepository, EquipmentRepository equipmentRepository, HealthConditionRepository healthConditionRepository, InjuryRepository injuryRepository) {
+    public DatabaseSeeder(MuscleRepository muscleRepository, BodyAreaRepository bodyAreaRepository, EquipmentRepository equipmentRepository, HealthConditionRepository healthConditionRepository, InjuryRepository injuryRepository, ExerciseRepository exerciseRepository) {
         this.muscleRepository = muscleRepository;
         this.bodyAreaRepository = bodyAreaRepository;
         this.equipmentRepository = equipmentRepository;
         this.healthConditionRepository = healthConditionRepository;
         this.injuryRepository = injuryRepository;
+        this.exerciseRepository = exerciseRepository;
     }
 
     @Override
@@ -188,6 +192,42 @@ public class DatabaseSeeder implements ApplicationRunner {
                 injury.setDuration(data[2]);
 
                 injuryRepository.save(injury);
+
+                index++;
+            }
+            reader.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void seedExerciseDB() {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(
+                    ResourceUtils.getFile("src/main/resources/data/AdaptiveFitness-Exercise.csv")));
+
+            String line;
+            int index = 1;
+            boolean isFirstLine = true;
+
+            while ((line = reader.readLine()) != null) {
+                if (isFirstLine) {
+                    isFirstLine = false;
+                    continue;
+                }
+
+                String[] data = line.split(",");
+                Exercise exercise = new Exercise();
+                exercise.setId(data[0]);
+                exercise.setName(data[1]);
+                exercise.setDifficulty(data[2]);
+                exercise.setMainMuscle(muscleRepository.findByName(data[3]));
+                exercise.setEquipment(equipmentRepository.findByName(data[4]));
+                exercise.setTargetArea(bodyAreaRepository.findByName(data[5]));
+                exercise.setSecondaryMuscle(muscleRepository.findByName(data[6]));
+                exercise.setInstruction(data[7]);
+
+                exerciseRepository.save(exercise);
 
                 index++;
             }

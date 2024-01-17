@@ -7,4 +7,5 @@ import java.util.UUID
 
 @Repository
 interface EquipmentRepository : JpaRepository<Equipment, String> {
+    fun findByName(name: String): Equipment?
 }

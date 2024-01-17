@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface ExerciseRepository : JpaRepository<Exercise, UUID> {
+interface ExerciseRepository : JpaRepository<Exercise, String> {
 }
