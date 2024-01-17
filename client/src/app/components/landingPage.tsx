@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const LandingPage = () => {
   return (
-    <section className="flex flex-col h-[82%] bg-primary w-full p-8 text-secondary items-center justify-center">
+    <section className="flex flex-col h-[86%] bg-primary w-full p-8 text-secondary items-center justify-center">
       <div className="flex flex-col gap-12 text-center">
         <div>
           <h1 className="text-4xl md:text-6xl p-2">Text will go here</h1>

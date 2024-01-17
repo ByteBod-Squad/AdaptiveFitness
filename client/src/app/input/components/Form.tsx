@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { TextField } from '@mui/material';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -25,53 +26,77 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col items-center'>
-      <label>
-        Gender:
-        <select name="gender" value={formData.gender} onChange={handleChange}>
-          <option value="">Select Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </label>
-      <br />
+    <div className="flex justify-center items-center">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-8 bg-tertiary/80 text-secondary px-12 md:px-16 py-8 rounded-md"
+      >
+        <label className="flex items-center gap-2">
+          <div>
+            <input
+              type="radio"
+              name="gender"
+              value="male"
+              checked={formData.gender === 'male'}
+              onChange={handleChange}
+              className="mx-2 cursor-pointer scale-150 accent-accent"
+            />
+            <span className="">Male</span>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="gender"
+              value="female"
+              checked={formData.gender === 'female'}
+              onChange={handleChange}
+              className="mx-2 cursor-pointer scale-150 accent-accent"
+            />
+            <span className="">Female</span>
+          </div>
+        </label>
 
-      <label>
-        Age:
-        <input
-          type="number"
-          name="age"
-          value={formData.age}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
+        <label>
+          <input
+            placeholder="Age"
+            className="bg-primary border-b outline-none rounded-sm px-1"
+            inputMode="numeric"
+            name="age"
+            value={formData.age}
+            onChange={handleChange}
+          />
+        </label>
 
-      <label>
-        Height:
-        <input
-          type="text"
-          name="height"
-          value={formData.height}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
+        <label>
+          <input
+            placeholder="Height (cm)"
+            className="bg-primary border-b outline-none rounded-sm px-1"
+            inputMode="numeric"
+            name="height"
+            value={formData.height}
+            onChange={handleChange}
+          />
+        </label>
 
-      <label>
-        Weight:
-        <input
-          type="text"
-          name="weight"
-          value={formData.weight}
-          onChange={handleChange}
-        />
-      </label>
-      <br />
+        <label>
+          <input
+            placeholder="Weight (kg)"
+            className="bg-primary border-b outline-none rounded-sm px-1"
+            inputMode="numeric"
+            name="weight"
+            value={formData.weight}
+            onChange={handleChange}
+          />
+        </label>
 
-      <button type="submit">Submit</button>
-    </form>
+        <button
+          type="submit"
+          className="bg-primary text-xl border border-1 active:bg-primary/50 px-4 py-1 rounded-lg text-secondary m-2"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 
