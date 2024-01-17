@@ -1,7 +1,6 @@
 package com.bytebodsquad.server.exercisegenerator
 
 import com.bytebodsquad.server.exercisegenerator.dto.InputDataResponse
-import com.bytebodsquad.server.exercisegenerator.entity.Equipment
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
