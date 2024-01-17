@@ -48,6 +48,7 @@ public class DatabaseSeeder implements ApplicationRunner {
         seedEquipmentDB();
         seedHealthConditionDB();
         seedInjuryDB();
+        seedExerciseDB();
     }
 
     public void seedMuscleDB() {
