@@ -56,7 +56,16 @@ const Form = () => {
           </div>
         </label>
 
-        <label>
+
+        <TextField
+  label='Age'
+  variant='standard'
+  value={formData.age}
+  onChange={(e) => setFormData({ ...formData, age: e.target.value })}
+  color="secondary"
+/>
+
+        {/* <label>
           <input
             placeholder="Age"
             className="bg-primary border-b outline-none rounded-sm px-1"
@@ -65,7 +74,7 @@ const Form = () => {
             value={formData.age}
             onChange={handleChange}
           />
-        </label>
+        </label> */}
 
         <label>
           <input
