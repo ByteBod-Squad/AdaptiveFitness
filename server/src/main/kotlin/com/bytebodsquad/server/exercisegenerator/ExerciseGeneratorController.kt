@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/exercise")
+@RequestMapping("/api/exercise")
 class ExerciseGeneratorController (val service: ExerciseGeneratorService){
 
-    @GetMapping
+    @GetMapping("/formInputData")
     fun index() : InputDataResponse = service.allInputData()
 }
